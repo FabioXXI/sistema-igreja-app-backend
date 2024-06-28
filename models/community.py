@@ -7,7 +7,7 @@ class Community(Base):
 
     id = Column(String, primary_key=True)
     localization = Column(String)
-    email = Column(String)
+    email = Column(String, unique=True)
     community_image = Column(LargeBinary)
     patron = Column(String)
 

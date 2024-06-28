@@ -5,9 +5,10 @@ from database.db import Base
 class User(Base):
     __tablename__ = 'users'
 
+    id = Column(String, primary_key=True)
     name = Column(String)
-    cpf = Column(String, primary_key=True)
+    cpf = Column(String, unique=True)
     birthday = Column(Date)
-    email = Column(String)
+    email = Column(String, unique=True)
     profile_image = Column(LargeBinary)
     community_id = Column(String, ForeignKey('communities.id'))
